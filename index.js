@@ -1,5 +1,9 @@
 const testVar = {}
 
+function testFunc() {
+  return "hi"
+}
+
 const record = [
   {year: "2018", result: "L"},
   {year: "2017", result: "W"},
@@ -7,17 +11,13 @@ const record = [
   //...
 ]
 
-function testFunc() {
-  return "hi"
-}
+
 
 function superbowlWin(record) {
-  record.find( function(record) {
-    console.log(record);
-    if(record.result === "W") {
-      return record.year
-    } else { 
-      return undefined 
-    } 
-  })
+  const victory = record.find(function(recordResult) { return recordResult.result === "W"})
+  if(victory){
+    return victory.year
+  } else {
+    return undefined 
+  } 
 }
